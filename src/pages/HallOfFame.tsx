@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Trophy, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
-import { Navbar } from '../components/Navbar';
+import { NavbarHall } from '../components/NavbarHall';
+import { AddToHallOfFameModal } from '../components/AddToHallOfFameModal';
 import type { HallOfFameMember, FilterOptions } from '../types/hallOfFame';
 import { MemberCard } from '../components/MemberCard';
 import { Filters } from '../components/Filters';
 import { MemberDetailPanel } from '../components/MemberDetailPanel';
 
 function HallOfFame() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [members, setMembers] = useState<HallOfFameMember[]>([]);
   const [filteredMembers, setFilteredMembers] = useState<HallOfFameMember[]>([]);
   const [loading, setLoading] = useState(true);
@@ -81,9 +83,14 @@ function HallOfFame() {
     setTimeout(() => setSelectedMember(null), 500);
   };
 
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    fetchMembers();
+  };
+
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
+      <NavbarHall onAddClick={() => setIsModalOpen(true)} />
 
       <div className="pt-20 bg-gradient-to-b from-zinc-900 to-black border-b border-zinc-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -138,6 +145,11 @@ function HallOfFame() {
         member={selectedMember}
         isOpen={isPanelOpen}
         onClose={handleClosePanel}
+      />
+
+      <AddToHallOfFameModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
       />
 
       <footer className="bg-zinc-900 border-t border-zinc-800 py-6 mt-12">
