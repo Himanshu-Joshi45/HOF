@@ -9,10 +9,16 @@ export function Navbar({ onLogoClick }: NavbarProps) {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
+    window.scrollTo(0, 0);
     navigate('/');
     if (onLogoClick) {
       onLogoClick();
     }
+  };
+
+  const handleNavigate = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
   };
 
   return (
@@ -32,13 +38,22 @@ export function Navbar({ onLogoClick }: NavbarProps) {
             </span>
           </button>
 
-          <a
-            href="mailto:info@poornima.org"
-            className="flex items-center gap-2 text-zinc-300 hover:text-amber-500 transition-colors duration-200"
-          >
-            <Mail className="w-5 h-5" />
-            <span className="hidden sm:inline">info@poornima.org</span>
-          </a>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => handleNavigate('/hall-of-fame')}
+              className="text-zinc-300 hover:text-amber-500 transition-colors duration-200 font-medium"
+            >
+              Hall of Fame
+            </button>
+
+            <button
+              onClick={() => window.location.href = 'mailto:info@poornima.org'}
+              className="flex items-center gap-2 text-zinc-300 hover:text-amber-500 transition-colors duration-200"
+            >
+              <Mail className="w-5 h-5" />
+              <span className="hidden sm:inline">info@poornima.org</span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
