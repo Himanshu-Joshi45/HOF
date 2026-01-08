@@ -1,75 +1,106 @@
-# React + TypeScript + Vite
+🏆 HallOfFame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HallOfFame is a modern web application built to showcase outstanding students and alumni achievements. The platform highlights profiles in a clean, professional, and responsive interface, making it easy to celebrate excellence and success stories.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://hof-gamma.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
 
-## React Compiler
+Hall of Fame Listings – View profiles of distinguished students and alumni
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Dynamic Data – Data fetched and managed using Supabase
 
-Note: This will impact Vite dev & build performances.
+Professional UI – Clean, minimal, and elegant design
 
-## Expanding the ESLint configuration
+Responsive Design – Optimized for desktop and mobile devices
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Fast Performance – Built using modern frontend technologies
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🛠️ Technologies Used
+Frontend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+React.js
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TypeScript
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+CSS (styling)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Backend / Database
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Supabase
+
+Deployment
+
+Vercel
+
+🚀 Getting Started
+Prerequisites
+
+npm or yarn
+
+Supabase account
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/Himanshu-Joshi45/HallOfFame.git
+
+
+Install dependencies:
+
+npm install
+# or
+yarn install
+
+
+Create a .env file in the root directory with the following variables:
+
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+
+Start the development server:
+
+npm run dev
+# or
+yarn dev
+
+
+Open your browser and navigate to:
+
+http://localhost:5173
+
+🔒 Application Flow
+
+Users can browse the Hall of Fame without authentication
+
+Data is retrieved dynamically from Supabase
+
+Profiles are displayed in a structured and visually appealing layout
+
+Designed to scale with future admin and authentication features
+
+💡 Future Enhancements
+
+Admin panel for managing Hall of Fame entries
+
+Authentication and role-based access
+
+Search and filter functionality
+
+Achievement categories and timelines
+
+Image optimization and performance improvements
+
+👨‍💻 Developer
+
+Himanshu Joshi
+
+GitHub: https://github.com/Himanshu-Joshi45
+
+🙏 Acknowledgements
+
+Supabase for backend and database services
+
+Vercel for deployment and hosting
