@@ -118,7 +118,4 @@ A modern web application built to showcase the achievements of outstanding stude
 
 
 
-<div align="center">
-  <p>Made with ❤️ by Himanshu Joshi</p>
-  <p>⭐ Star this repo if you find it useful!</p>
-</div>
+
